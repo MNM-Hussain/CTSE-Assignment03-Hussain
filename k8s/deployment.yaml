@@ -16,5 +16,5 @@ spec:
         - name: nodejs-k8s
           image: huss99/ctse-assignment3-hussain:v1
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
 
