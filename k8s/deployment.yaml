@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-k8s-1
+  name: nodeapp-deployment
+  labels:
+    app: nodejs-k8s-1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nodejs-k8s-1
   template:
     metadata:
       labels:
-        app: nodejs-k8s-1
+        app: nodejs-k8s-1 
     spec:
       containers:
-        - name: nodejs-k8s-1
-          image: huss99/ctse-assignment3-hussain:v1
-          ports:
-            - containerPort: 3000
-
+      - name: nodeserver
+        image: gcr.io/kubernetes-project-350417/nodeapp:latest
+        ports:
+        - containerPort: 3000
