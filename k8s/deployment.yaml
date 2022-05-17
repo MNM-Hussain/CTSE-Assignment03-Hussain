@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: gcr.io/kubernetes-project-350417/nodeapp:latest
+        image: gcr.io/nodejs-k8s-350419/github.com/mnm-hussain/ctse-assignment03:v1
         ports:
         - containerPort: 3000
