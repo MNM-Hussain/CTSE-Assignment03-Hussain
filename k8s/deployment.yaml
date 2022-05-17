@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: nodejs-k8s-1
   labels:
     app: nodejs-k8s-1
 spec:
@@ -15,7 +15,7 @@ spec:
         app: nodejs-k8s-1 
     spec:
       containers:
-      - name: nodeserver
+      - name: nodejs-k8s-1
         image: gcr.io/nodejs-k8s-350419/github.com/mnm-hussain/ctse-assignment03-hussain:v1
         ports:
         - containerPort: 3000
