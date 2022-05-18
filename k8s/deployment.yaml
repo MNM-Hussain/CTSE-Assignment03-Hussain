@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nodejs-k8s-1
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nodejs-k8s-1
