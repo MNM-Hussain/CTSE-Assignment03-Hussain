@@ -42,7 +42,7 @@ app.post("/payment/create", async (req,res) => {
 
 app.delete("/payment/delete/:id", (req, res) => {
   let id = +req.params.id;
-  let index = productData.findIndex((prod) => prod.id === id);
+  let index = paymentData.findIndex((prod) => prod.id === id);
   if(index >= 0) {
       let deletedPayment = paymentData.splice(index, 1);
       res.send(deletedPayment);
