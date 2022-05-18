@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodejs-k8s-1
-        image: gcr.io/nodejs-k8s-350419/github.com/mnm-hussain/ctse-assignment03-hussain:v1
+        image: gcr.io/nodejs-k8s-350419/github.com/mnm-hussain/ctse-assignment03-hussain
         ports:
         - containerPort: 3000
         resources:
