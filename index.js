@@ -1,4 +1,7 @@
 const express = require('express');
+const cors = require('cors');
+const bodyparser = require('body-parser');
+let { paymentData } = require("./paymentData");
 
 // Constants
 const PORT = 3000;
@@ -7,10 +10,10 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
-const bodyparser = require('body-parser');
 app.use(bodyparser.json());
+app.use(cors());
 
-let { paymentData } = require("./paymentData");
+
 
 app.get('/', (req, res) => {
   res.send(paymentData);
@@ -23,11 +26,12 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 app.get("/payment/:id", (req,res) => {
   let id = +req.params.id;
-  let payment = paymentData.find((prod) => prod.id === id);
-  if(payment)
-      res.send(payment);
-  else
-      res.status(404).send("No Payment Found");
+  // let payment = paymentData.find((prod) => prod.id === id);
+  // if(payment)
+  //     res.send(payment);
+  // else
+  //     res.status(404).send("No Payment Found");
+  res.send(id)
 })
 
 app.post("/payment/create", async (req,res) => {
